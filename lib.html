@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>tako.js Documentation</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(to right, #fdfdfd, #f0f0ff);
+      color: #333;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #4a4e69;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 0.3rem;
+    }
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: Consolas, monospace;
+    }
+    pre {
+      background: #f5f5f5;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 8px;
+    }
+    .function {
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>📦 tako.js Documentation</h1>
+  <p>A lightweight utility library built by <strong>Ayaan</strong> for fun and productivity.</p>
+
+  <h2>🚀 Getting Started</h2>
+  <p>Include tako.js in your HTML file:</p>
+  <pre><code>&lt;script src="https://ayaan-creator-web.github.io/Libraries/tako.js"&gt;&lt;/script&gt;</code></pre>
+
+  <h2>🛠️ Available Functions</h2>
+
+  <div class="function">
+    <h3><code>tako.isEmail(email)</code></h3>
+    <p>Returns <code>true</code> if the input is a valid email address.</p>
+    <pre><code>tako.isEmail("hi@example.com") // true</code></pre>
+  </div>
+
+  <div class="function">
+    <h3><code>tako.isPhoneNumber(phone)</code></h3>
+    <p>Returns <code>true</code> if the input is a valid international-style phone number.</p>
+    <pre><code>tako.isPhoneNumber("+61412345678") // true</code></pre>
+  </div>
+
+  <div class="function">
+    <h3><code>tako.pick(array)</code></h3>
+    <p>Returns a random element from an array.</p>
+    <pre><code>tako.pick(["apple", "banana", "pear"]) // "banana"</code></pre>
+  </div>
+
+  <div class="function">
+    <h3><code>tako.capitalize(str)</code></h3>
+    <p>Capitalizes the first letter of a string.</p>
+    <pre><code>tako.capitalize("ayaan") // "Ayaan"</code></pre>
+  </div>
+
+  <div class="function">
+    <h3><code>tako.kebabCase(str)</code></h3>
+    <p>Converts spaces in a string to dashes (kebab-case).</p>
+    <pre><code>tako.kebabCase("hello world") // "hello-world"</code></pre>
+  </div>
+
+  <div class="function">
+    <h3><code>tako.parity(number)</code></h3>
+    <p>Returns <code>"Even"</code> or <code>"Odd"</code> based on the number.</p>
+    <pre><code>tako.parity(42) // "Even"</code></pre>
+  </div>
+
+  <div class="function">
+    <h3><code>tako.convert(value)</code></h3>
+    <p>Converts a string to a number or a number to a string.</p>
+    <pre><code>tako.convert("123") // 123
+tako.convert(456) // "456"</code></pre>
+  </div>
+
+  <div class="function">
+    <h3><code>tako.isURL(url)</code></h3>
+    <p>Returns <code>true</code> if the input is a valid URL.</p>
+    <pre><code>tako.isURL("https://example.com") // true</code></pre>
+  </div>
+
+  <hr />
+  <p>Built by <strong>Ayaan Khalique</strong> · Founder and Head Developer of <strong>Staklabs</strong></p>
+</body>
+</html>
