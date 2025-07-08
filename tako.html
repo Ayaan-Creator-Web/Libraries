@@ -2,116 +2,212 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>takoJS Documentation</title>
   <style>
     body {
-      font-family: "Segoe UI", sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 2em;
       background: linear-gradient(to right, #fdfdfd, #f0f0ff);
-      color: #333;
-      padding: 2rem;
-      line-height: 1.6;
+      color: #222;
     }
-    h1, h2 {
-      color: #4a4e69;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.3rem;
+    h1 {
+      color: #2b2d42;
+      font-size: 2.5em;
+    }
+    h2 {
+      color: #3a0ca3;
+      margin-top: 2em;
+    }
+    .method {
+      background: #fff;
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+      margin-bottom: 1em;
+      cursor: pointer;
+    }
+    .method:hover {
+      background: #eef;
+    }
+    .back-button {
+      display: inline-block;
+      margin-top: 1em;
+      padding: 0.5em 1em;
+      background: #3a0ca3;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
     }
     code {
-      background: #eee;
-      padding: 2px 4px;
+      background: #eaeaea;
+      padding: 2px 6px;
       border-radius: 4px;
-      font-family: Consolas, monospace;
-    }
-    pre {
-      background: #f5f5f5;
-      padding: 1rem;
-      overflow-x: auto;
-      border-radius: 8px;
-    }
-    .function {
-      margin-top: 2rem;
+      font-size: 0.95em;
     }
   </style>
 </head>
 <body>
-  <h1>📦 takoJS Documentation</h1>
-  <p>A lightweight utility library built by <strong>Ayaan</strong> for fun and productivity.</p>
+  <h1>takoJS Documentation</h1>
+  <div id="content"></div>
 
-  <h2>🚀 Getting Started</h2>
-  <p>Include takoJS in your HTML file:</p>
-  <pre><code>&lt;script src="https://ayaan-creator-web.github.io/Libraries/tako.js"&gt;&lt;/script&gt;</code></pre>
+  <script>
+    const functions = {
+      "tako.isEmail(email)": {
+        description: "Checks if a given string is a valid email address.",
+        example: [
+          "tako.isEmail('test@example.com') // true",
+          "tako.isEmail('invalid@') // false"
+        ]
+      },
+      "tako.isPhoneNumber(phoneNumber)": {
+        description: "Checks if a string is a valid international phone number (7–15 digits).",
+        example: [
+          "tako.isPhoneNumber('+12345678901') // true",
+          "tako.isPhoneNumber('123') // false"
+        ]
+      },
+      "tako.pick(array)": {
+        description: "Returns a random element from an array.",
+        example: [
+          "tako.pick(['apple', 'banana', 'cherry']) // 'banana' (random)"
+        ]
+      },
+      "tako.capitalize(string)": {
+        description: "Capitalizes the first character of a string.",
+        example: [
+          "tako.capitalize('hello') // 'Hello'"
+        ]
+      },
+      "tako.kebab(string)": {
+        description: "Replaces all spaces with hyphens.",
+        example: [
+          "tako.kebab('hello world') // 'hello-world'"
+        ]
+      },
+      "tako.parity(number)": {
+        description: "Returns 'Odd' if number is odd, otherwise 'Even'.",
+        example: [
+          "tako.parity(3) // 'Odd'",
+          "tako.parity(8) // 'Even'"
+        ]
+      },
+      "tako.convert(value)": {
+        description: "Converts a string to a number or a number to a string.",
+        example: [
+          "tako.convert('42') // 42",
+          "tako.convert(42) // '42'"
+        ]
+      },
+      "tako.isURL(url)": {
+        description: "Checks if a string is a valid URL.",
+        example: [
+          "tako.isURL('https://example.com') // true",
+          "tako.isURL('ftp://wrong.com') // false"
+        ]
+      },
+      "tako.run(codeString)": {
+        description: "Executes JavaScript code and returns the result.",
+        example: [
+          "tako.run('return 2 + 2') // 4"
+        ]
+      },
+      "tako.log(message)": {
+        description: "Logs a message to the console.",
+        example: [
+          "tako.log('Hello World') // (prints to console)"
+        ]
+      },
+      "tako.wait(milliseconds)": {
+        description: "Waits asynchronously for the given number of milliseconds.",
+        example: [
+          "await tako.wait(1000)"
+        ]
+      },
+      "tako.truncate(string, maxLength)": {
+        description: "Truncates a string and adds '...' if it exceeds maxLength.",
+        example: [
+          "tako.truncate('Hello world', 5) // 'Hello...'"
+        ]
+      },
+      "tako.debounce(codeString, delayTime)": {
+        description: "Delays and runs the JavaScript code after the specified delay.",
+        example: [
+          "await tako.debounce('console.log(123)', 1000)"
+        ]
+      },
+      "tako.length(string)": {
+        description: "Returns the number of characters in the string.",
+        example: [
+          "tako.length('hello') // 5"
+        ]
+      },
+      "tako.hasValue(string)": {
+        description: "Returns true if the string is not empty.",
+        example: [
+          "tako.hasValue('text') // true",
+          "tako.hasValue('') // false"
+        ]
+      },
+      "tako.isEmpty(string)": {
+        description: "Returns true if the string is empty.",
+        example: [
+          "tako.isEmpty('') // true",
+          "tako.isEmpty('hello') // false"
+        ]
+      },
+      "tako.isObject(object)": {
+        description: "Returns true if the value is an object and not null.",
+        example: [
+          "tako.isObject({}) // true",
+          "tako.isObject(null) // false"
+        ]
+      },
+      "tako.isArray(array)": {
+        description: "Returns true if the value is an array.",
+        example: [
+          "tako.isArray([1, 2, 3]) // true"
+        ]
+      },
+      "tako.formatDate(dateObject)": {
+        description: "Formats a Date object as a readable date string.",
+        example: [
+          "tako.formatDate(new Date()) // 'July 8, 2025'"
+        ]
+      },
+      "tako.formatTime(dateObject)": {
+        description: "Formats a Date object as a readable time string.",
+        example: [
+          "tako.formatTime(new Date()) // '11:59:59 AM'"
+        ]
+      },
+      "tako.error(errorMessage)": {
+        description: "Throws a new error with the given message.",
+        example: [
+          "tako.error('Something went wrong') // throws Error"
+        ]
+      }
+    };
 
-  <h2>🛠️ Available Functions</h2>
+    function loadMain() {
+      const container = document.getElementById('content');
+      container.innerHTML = `<h2>Utility Functions</h2>` +
+        Object.keys(functions).map(fn => `<div class="method" onclick="loadDetail('${fn.replace(/'/g, "\\'")}')">${fn}</div>`).join('');
+    }
 
-  <div class="function">
-    <h3><code>tako.isEmail(email)</code></h3>
-    <p>Returns <code>true</code> if the input is a valid email address.</p>
-    <pre><code>tako.isEmail("hi@example.com") // true</code></pre>
-  </div>
+    function loadDetail(funcName) {
+      const data = functions[funcName];
+      const container = document.getElementById('content');
+      container.innerHTML = `
+        <h2>${funcName}</h2>
+        <p>${data.description}</p>
+        <h3>Examples</h3>
+        <ul>${data.example.map(ex => `<li><code>${ex}</code></li>`).join('')}</ul>
+        <div class="back-button" onclick="loadMain()">← Back to all functions</div>
+      `;
+    }
 
-  <div class="function">
-    <h3><code>tako.isPhoneNumber(phone)</code></h3>
-    <p>Returns <code>true</code> if the input is a valid international-style phone number.</p>
-    <pre><code>tako.isPhoneNumber("+61412345678") // true</code></pre>
-  </div>
-
-  <div class="function">
-    <h3><code>tako.pick(array)</code></h3>
-    <p>Returns a random element from an array.</p>
-    <pre><code>tako.pick(["apple", "banana", "pear"]) // "banana"</code></pre>
-  </div>
-
-  <div class="function">
-    <h3><code>tako.capitalize(str)</code></h3>
-    <p>Capitalizes the first letter of a string.</p>
-    <pre><code>tako.capitalize("ayaan") // "Ayaan"</code></pre>
-  </div>
-
-  <div class="function">
-    <h3><code>tako.kebab(str)</code></h3>
-    <p>Converts spaces in a string to dashes (kebab-case).</p>
-    <pre><code>tako.kebab("hello world") // "hello-world"</code></pre>
-  </div>
-
-  <div class="function">
-    <h3><code>tako.parity(number)</code></h3>
-    <p>Returns <code>"Even"</code> or <code>"Odd"</code> based on the number.</p>
-    <pre><code>tako.parity(42) // "Even"</code></pre>
-  </div>
-
-  <div class="function">
-    <h3><code>tako.convert(value)</code></h3>
-    <p>Converts a string to a number or a number to a string.</p>
-    <pre><code>tako.convert("123") // 123
-tako.convert(456) // "456"</code></pre>
-  </div>
-
-  <div class="function">
-    <h3><code>tako.isURL(url)</code></h3>
-    <p>Returns <code>true</code> if the input is a valid URL.</p>
-    <pre><code>tako.isURL("https://example.com") // true</code></pre>
-  </div>
-
-  <div class="function">
-    <h3><code>tako.run(code)</code></h3>
-    <p>Executes a string of JavaScript code and returns the result.</p>
-    <pre><code>tako.run("return 2 + 2") // 4</code></pre>
-  </div>
-
-  <div class="function">
-    <h3><code>tako.log(text)</code></h3>
-    <p>Logs the provided text to the console.</p>
-    <pre><code>tako.log("Hello from tako!") // Console: Hello from tako!</code></pre>
-  </div>
-
-  <div class="function">
-    <h3><code>tako.wait(ms)</code></h3>
-    <p>Returns a promise that resolves after a delay.</p>
-    <pre><code>await tako.wait(1000) // waits 1 second</code></pre>
-  </div>
-
-  <hr />
-  <p>Built by <strong>Ayaan Khalique</strong> · Founder and Head Developer of <strong>Staklabs</strong></p>
+    loadMain();
+  </script>
 </body>
 </html>
