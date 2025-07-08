@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>tako.js Documentation</title>
+  <title>takoJS Documentation</title>
   <style>
     body {
       font-family: "Segoe UI", sans-serif;
@@ -35,11 +35,11 @@
   </style>
 </head>
 <body>
-  <h1>📦 tako.js Documentation</h1>
+  <h1>📦 takoJS Documentation</h1>
   <p>A lightweight utility library built by <strong>Ayaan</strong> for fun and productivity.</p>
 
   <h2>🚀 Getting Started</h2>
-  <p>Include tako.js in your HTML file:</p>
+  <p>Include takoJS in your HTML file:</p>
   <pre><code>&lt;script src="https://ayaan-creator-web.github.io/Libraries/tako.js"&gt;&lt;/script&gt;</code></pre>
 
   <h2>🛠️ Available Functions</h2>
@@ -69,9 +69,9 @@
   </div>
 
   <div class="function">
-    <h3><code>tako.kebabCase(str)</code></h3>
+    <h3><code>tako.kebab(str)</code></h3>
     <p>Converts spaces in a string to dashes (kebab-case).</p>
-    <pre><code>tako.kebabCase("hello world") // "hello-world"</code></pre>
+    <pre><code>tako.kebab("hello world") // "hello-world"</code></pre>
   </div>
 
   <div class="function">
@@ -91,6 +91,24 @@ tako.convert(456) // "456"</code></pre>
     <h3><code>tako.isURL(url)</code></h3>
     <p>Returns <code>true</code> if the input is a valid URL.</p>
     <pre><code>tako.isURL("https://example.com") // true</code></pre>
+  </div>
+
+  <div class="function">
+    <h3><code>tako.run(code)</code></h3>
+    <p>Executes a string of JavaScript code and returns the result.</p>
+    <pre><code>tako.run("return 2 + 2") // 4</code></pre>
+  </div>
+
+  <div class="function">
+    <h3><code>tako.log(text)</code></h3>
+    <p>Logs the provided text to the console.</p>
+    <pre><code>tako.log("Hello from tako!") // Console: Hello from tako!</code></pre>
+  </div>
+
+  <div class="function">
+    <h3><code>tako.wait(ms)</code></h3>
+    <p>Returns a promise that resolves after a delay.</p>
+    <pre><code>await tako.wait(1000) // waits 1 second</code></pre>
   </div>
 
   <hr />
